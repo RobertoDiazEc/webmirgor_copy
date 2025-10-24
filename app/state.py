@@ -74,11 +74,11 @@ class State(rx.State):
         {"text": "El Grupo", "href": "#"},
         {"text": "Negocios", "href": "#"},
         {"text": "Marcas", "href": "#"},
-        {"text": "Países", "href": "#"},
+        {"text": "PaÍses", "href": "#"},
         {"text": "Inversores", "href": "#"},
         {"text": "Empleos", "href": "#"},
         {"text": "Venta Corporativa", "href": "#"},
-        {"text": "Contacto", "href": "#"},
+        {"text": "Contacto", "href": "/contacto"},
     ]
     socials: list[dict[str, str]] = [
         {"icon": "linkedin", "href": "#"},

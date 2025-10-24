@@ -4,12 +4,22 @@ from app.components.header import header
 from app.components.hero import hero
 from app.components.mision_vision_valores import mision_vision_valores
 from app.components.footer import footer
+from app.components.contact_page import contact_page_content
 
 
 def index() -> rx.Component:
     return rx.el.div(
         header(),
         rx.el.main(hero(), mision_vision_valores()),
+        footer(),
+        class_name="font-['Lato'] bg-white",
+    )
+
+
+def contacto() -> rx.Component:
+    return rx.el.div(
+        header(),
+        rx.el.main(contact_page_content()),
         footer(),
         class_name="font-['Lato'] bg-white",
     )
@@ -27,3 +37,4 @@ app = rx.App(
     ],
 )
 app.add_page(index)
+app.add_page(contacto, route="/contacto")
