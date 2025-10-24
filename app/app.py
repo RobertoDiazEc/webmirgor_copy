@@ -9,7 +9,7 @@ from app.components.footer import footer
 def index() -> rx.Component:
     return rx.el.div(
         header(),
-        rx.el.main(hero(), mision_vision_valores(), class_name="pt-[124px]"),
+        rx.el.main(hero(), mision_vision_valores()),
         footer(),
         class_name="font-['Lato'] bg-white",
     )

@@ -22,5 +22,5 @@ def mision_vision_valores() -> rx.Component:
             ),
             class_name="container mx-auto px-4 lg:px-6",
         ),
-        class_name="py-16 md:py-24 bg-gray-50",
+        class_name="w-full py-16 md:py-24 bg-gray-50",
     )

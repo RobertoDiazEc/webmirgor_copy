@@ -51,9 +51,9 @@ def footer() -> rx.Component:
                     rx.foreach(State.footer_links, footer_link_item),
                     class_name="w-full md:w-1/4 flex flex-col items-start md:items-end gap-3",
                 ),
-                class_name="flex flex-col md:flex-row justify-between gap-8",
+                class_name="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row justify-between gap-8",
             ),
-            class_name="container mx-auto px-4 lg:px-6 py-12",
+            class_name="w-full py-12",
         ),
         class_name="bg-gray-100 border-t border-gray-200",
     )

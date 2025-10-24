@@ -17,7 +17,7 @@ def hero() -> rx.Component:
                     class_name="text-sm font-medium text-gray-300 mb-4 tracking-wider",
                 ),
                 rx.el.h1(
-                    "En Mirgor nos une un objetivo en común: ser mejores cada día",
+                    "En Mirgor nos une un objetivo en comùn: ser mejores cada día",
                     class_name="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight",
                 ),
                 rx.el.p(
@@ -32,5 +32,5 @@ def hero() -> rx.Component:
             ),
             class_name="relative container mx-auto px-4 lg:px-6 h-full flex items-center justify-start text-left",
         ),
-        class_name="relative h-screen min-h-[600px] w-full",
+        class_name="relative min-h-[600px] w-full pt-[124px]",
     )
