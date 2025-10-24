@@ -7,7 +7,10 @@ from app.components.footer import footer
 
 def index() -> rx.Component:
     return rx.el.div(
-        header(), rx.el.main(hero()), footer(), class_name="font-['Lato'] bg-white"
+        header(),
+        rx.el.main(hero(), class_name="pt-[124px]"),
+        footer(),
+        class_name="font-['Lato'] bg-white",
     )
 
 

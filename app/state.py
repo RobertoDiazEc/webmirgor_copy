@@ -20,6 +20,12 @@ class FooterLink(TypedDict):
 class State(rx.State):
     """The app state."""
 
+    show_mobile_menu: bool = False
+
+    @rx.event
+    def toggle_mobile_menu(self):
+        self.show_mobile_menu = not self.show_mobile_menu
+
     nav_items: list[NavItem] = [
         {"text": "El Grupo", "href": "#"},
         {"text": "Negocios", "href": "#"},

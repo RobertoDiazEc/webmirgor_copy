@@ -18,6 +18,15 @@ def social_icon(item: dict) -> rx.Component:
     )
 
 
+def mobile_nav_item(item: dict) -> rx.Component:
+    return rx.el.a(
+        item["text"],
+        href=item["href"],
+        on_click=State.toggle_mobile_menu,
+        class_name="text-2xl font-bold text-white hover:text-orange-400 transition-colors py-2 text-center",
+    )
+
+
 def header() -> rx.Component:
     return rx.el.header(
         rx.el.div(
@@ -63,9 +72,29 @@ def header() -> rx.Component:
                 class_name="hidden md:flex items-center gap-6 lg:gap-8",
             ),
             rx.el.button(
-                rx.icon("menu", class_name="h-6 w-6"), class_name="md:hidden text-white"
+                rx.icon("menu", class_name="h-6 w-6"),
+                class_name="md:hidden text-white",
+                on_click=State.toggle_mobile_menu,
             ),
             class_name="container mx-auto px-4 lg:px-6 py-4 flex justify-between items-center",
         ),
-        class_name="absolute top-0 left-0 right-0 z-10 bg-black/30 backdrop-blur-sm",
+        rx.cond(
+            State.show_mobile_menu,
+            rx.el.div(
+                rx.el.div(
+                    rx.el.button(
+                        rx.icon("x", class_name="h-8 w-8"),
+                        on_click=State.toggle_mobile_menu,
+                        class_name="absolute top-8 right-8 text-white",
+                    ),
+                    rx.el.nav(
+                        rx.foreach(State.nav_items, mobile_nav_item),
+                        class_name="flex flex-col items-center justify-center h-full gap-6",
+                    ),
+                    class_name="container mx-auto h-full",
+                ),
+                class_name="fixed inset-0 bg-black/90 backdrop-blur-md z-50 md:hidden",
+            ),
+        ),
+        class_name="fixed top-0 left-0 right-0 z-20 bg-black/30 backdrop-blur-sm",
     )
