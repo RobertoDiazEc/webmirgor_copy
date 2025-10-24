@@ -28,10 +28,27 @@ class State(rx.State):
     """The app state."""
 
     show_mobile_menu: bool = False
+    current_mvv_index: int = 0
 
     @rx.event
     def toggle_mobile_menu(self):
         self.show_mobile_menu = not self.show_mobile_menu
+
+    @rx.event
+    def next_mvv(self):
+        self.current_mvv_index = (self.current_mvv_index + 1) % len(
+            self.mission_vision_values
+        )
+
+    @rx.event
+    def prev_mvv(self):
+        self.current_mvv_index = (
+            self.current_mvv_index - 1 + len(self.mission_vision_values)
+        ) % len(self.mission_vision_values)
+
+    @rx.event
+    def set_mvv_index(self, index: int):
+        self.current_mvv_index = index
 
     mission_vision_values: list[MissionVisionValuesItem] = [
         {
