@@ -17,6 +17,12 @@ class FooterLink(TypedDict):
     href: str
 
 
+class MissionVisionValuesItem(TypedDict):
+    icon: str
+    title: str
+    description: str
+
+
 class State(rx.State):
     """The app state."""
 
@@ -26,6 +32,23 @@ class State(rx.State):
     def toggle_mobile_menu(self):
         self.show_mobile_menu = not self.show_mobile_menu
 
+    mission_vision_values: list[MissionVisionValuesItem] = [
+        {
+            "icon": "flag",
+            "title": "Misión",
+            "description": "Generar valor a través de la innovación y la eficiencia en la producción, para ofrecer soluciones tecnológicas que mejoren la vida de las personas y contribuyan al desarrollo sostenible.",
+        },
+        {
+            "icon": "eye",
+            "title": "Visión",
+            "description": "Ser líderes en la industria tecnológica a nivel global, reconocidos por nuestra calidad, compromiso con el cliente y capacidad para anticipar las necesidades del futuro.",
+        },
+        {
+            "icon": "gem",
+            "title": "Valores",
+            "description": "Nos regimos por la integridad, la excelencia, la colaboración y la pasión por la innovación. Fomentamos un ambiente de respeto y crecimiento para nuestros empleados y socios.",
+        },
+    ]
     nav_items: list[NavItem] = [
         {"text": "El Grupo", "href": "#"},
         {"text": "Negocios", "href": "#"},

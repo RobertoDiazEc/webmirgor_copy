@@ -2,13 +2,14 @@ import reflex as rx
 from app.state import State
 from app.components.header import header
 from app.components.hero import hero
+from app.components.mision_vision_valores import mision_vision_valores
 from app.components.footer import footer
 
 
 def index() -> rx.Component:
     return rx.el.div(
         header(),
-        rx.el.main(hero(), class_name="pt-[124px]"),
+        rx.el.main(hero(), mision_vision_valores(), class_name="pt-[124px]"),
         footer(),
         class_name="font-['Lato'] bg-white",
     )
